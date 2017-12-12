@@ -1,0 +1,2 @@
+By dividing the TF of each unigram by the total number of unigrams generated, we get the probability distribution consisiting of all terms. From this distribution, the cut off value of 0.001 worked well to remove the major chunk of most frequent words and store int the stoplist. 
+On inspecting these words, it can be seen that these words have very high TF and are found in many documents in the corpus. The removal of these words from indexing makes significance difference in terms of page ranking.
