@@ -1,0 +1,9 @@
+TASK 1
+------------
+
+Made very minor changes to the existing program to read the corpus automatically file by file and made use of the Indexer to generate an index. Created a query array with the query values and for each query used Lucene to generated the top documents with their scores and print them.
+
+TASK 2
+------------
+
+Used inverted index for unigrams from past assignment and built a corpus dictionary after processing the unigrams into context and locations. Used a query array to hold the queries and then for each query built a document set. Then for each document in the document set, calculated BM25 scores. Finally sorted the documents by their BM25 scores and output them to their respective files.
