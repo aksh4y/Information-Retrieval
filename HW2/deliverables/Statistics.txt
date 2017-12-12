@@ -1,0 +1,15 @@
+Stats for G1:-
+
+Pages with no in-links: 0
+Proportion: 0/996 = 0
+
+Number of sink nodes: 68
+Proportion: 68/996 = 0.068273
+
+Stats for G2:-
+
+Pages with no in-links: 0
+Proportion: 0/1000 = 0
+
+Number of sink nodes:
+Proportion: 12/1000 = 0.012

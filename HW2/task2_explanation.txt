@@ -1,0 +1,12 @@
+### Changes from Task 1###
+
+For task 2, I introduced 2 new parameters to my functions viz. main(), getUrls(), crawlUrl() and getChildUrls()
+
+I modified my existing program to check if the value of the new parameters passed was None (for task 1) or had values (for task 2).
+The parameters are URL and Keyword.
+
+I had to also introduce a new function called checkMatch(source, keyword) which returns True iff the keyword is present in the source in some way. The source could be a URL or an anchor text. 
+In the getUrls function, the source is a URL while in the getChildUrls function the source is both a URL and an anchor text as the checkMatch function is called once for each.
+
+When there is no match, the crawled URL is simply ignored and we move on.
+The checkMatch function check for a pure match "foo" and a regEx match  "foo.".

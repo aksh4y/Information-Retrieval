@@ -1,0 +1,98 @@
+#######STATISTICS##########
+
+G1:-
+
+Top 10 pages by PageRank:
+
+********FORMAT: #) Page_Name - Page_Rank*********
+
+1) International_Standard_Book_Number - 0.047601802827684475
+2) Digital_object_identifier - 0.03913054023043759
+3) International_Standard_Serial_Number - 0.030638148823160377
+4) National_Diet_Library - 0.021658378584103292
+5) Bibcode - 0.01813445329608864
+6) World_War_II - 0.014772717788097847
+7) PubMed_Identifier - 0.014694547330065874
+8) Canada - 0.014510642302565128
+9) Japan - 0.013005949379223962
+10) OCLC - 0.012881564924563615
+
+Top 10 pages with maximum in-links:
+
+*********FORMAT: #) Page_Name - In-links***********
+
+1) International_Standard_Book_Number - 432
+2) Tropical_cyclone - 354
+3) Digital_object_identifier - 351
+4) Bibcode - 244
+5) Wayback_Machine - 244
+6) National_Oceanic_and_Atmospheric_Administration - 221
+7) Extratropical_cyclone - 202
+8) National_Hurricane_Center - 198
+9) Storm_surge - 190
+10) Pascal_(unit) - 189
+
+
+********************************************************************************************
+
+G2:-
+
+Top 10 pages by PageRank:
+
+********FORMAT: #) Page_Name - Page_Rank*********
+
+1) International_Standard_Book_Number - 0.026278236735159628
+2) Geographic_coordinate_system - 0.02061907769213519
+3) Canada - 0.01742418007136668
+4) United_States - 0.013395163953598474
+5) Wikidata - 0.011605866120900234
+6) Pacific_Ocean - 0.011362932936141225
+7) Wayback_Machine - 0.008512765430485472
+8) France - 0.00766944568845402
+9) New_Zealand - 0.00721141258837055
+10) Atlantic_Ocean - 0.006802947540059191
+
+
+Top 10 pages with maximum in-links:
+
+*********FORMAT: #) Page_Name - In-links***********
+
+1) Geographic_coordinate_system - 511
+2) International_Standard_Book_Number - 505
+3) Pacific_Ocean - 360
+4) United_States - 231
+5) Atlantic_Ocean - 219
+6) Equator - 208
+7) Arctic_Ocean - 193
+8) Antarctica - 182
+9) New_Zealand - 179
+10) Wayback_Machine - 179
+
+
+********************************************************************************************
+
+#######SPECULATION##########
+
+From the above hard data, we can see that there is a direc correlation between the
+number of in-links to a page and its page rank. What we see is that the higher
+the number of in-links to a page, the better is its page rank score. The page
+rank for a popular page is higher than a non-popular one and the popularity
+of a page and the popularity or "authority" of a page by definition is links
+to authority pages occur repeatedly on hub pages which directly relates to
+in-links to a page.
+
+There are two aspects to a page that we can look at: in-links  and out-links.
+We have seen how in-links correlate to ranking by definition but another way we
+can see this is mathematically. The algorithm involves improvement of page rank
+incrementally from 1 to # of in-links of a page so the greater the number of 
+in-links, the higher the page rank.
+Another aspect of this is that the old page rank from previous increments is divided
+by the number of out-links of a page. So the higher the number of out-links, the
+lower the increment value. On the other hand the lesser the number of out-links,
+the higher the incremental value.
+We can see this in the data we obtained as well. Some pages have a high number
+of in-links than other but their rank is behind the page with lesser in-links. This is 
+actually because of the number of out-links of each. The code below shows this:-
+
+for q in M[page]:
+                newPR[page] += d * PR[q]/len(L[q]);
